@@ -2,10 +2,20 @@
 
 # mgnl-calculator
 
-Small demo module built with webpack.
+Small calculator built with webpack.
 
 
-## Setup
+## Features
+
+Customizable formula and form fields. Supports different ids for multiple instances on one page.
+
+![](./preview-dialog.png)
+![](./preview-rendered.png)
+
+
+## Usage
+
+Depends on jQuery 3.x
 
 After installation, add this to your page template:
 
@@ -14,6 +24,7 @@ After installation, add this to your page template:
 <script src=".resources/mgnl-calculator/webresources/js/bundle.js"></script>
 
 ```
+
 
 ## Tests
 
@@ -34,3 +45,14 @@ Tests are super simple and based `cheerio`. Mocha is used as test runner
 Main test step in Travis executes `npm test`
 
 Setting up the Magnolia server is done with the `before_script` hook.
+
+
+## Information on Magnolia CMS
+
+This directory is a Magnolia 'light module'.
+https://docs.magnolia-cms.com
+
+
+## License
+
+MIT
