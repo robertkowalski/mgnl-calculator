@@ -1,0 +1,38 @@
+language: node_js
+node_js:
+  - "6"
+
+env:
+  - MAGNOLIA_CE_VERSION=5.5.1
+  - MAGNOLIA_CE_VERSION=5.5
+
+sudo: false
+addons:
+  apt:
+    packages:
+      - oracle-java8-installer
+      - oracle-java8-set-default
+
+dist: trusty
+
+before_script:
+
+  - cd .. && git clone -b proto https://github.com/robertkowalski/magnolia-cli && cd magnolia-cli && npm i -g . && cd ..
+  - mgnl -h
+
+  - mkdir -p magnolia && cd magnolia && mgnl jumpstart --magnolia-version=$MAGNOLIA_CE_VERSION && cd ..
+
+  - cd mgnl-custom && npm run build && cd ..
+
+  - cp -R mgnl-custom magnolia/light-modules/
+  - cp magnolia/light-modules/mgnl-custom/dev/test/fixtures/website.ci-testpage.xml magnolia/apache-tomcat/webapps/magnoliaAuthor/WEB-INF/bootstrap/common
+
+  - mkdir -p magnolia/apache-tomcat/logs/
+  - touch magnolia/apache-tomcat/logs/catalina.out
+  - pwd && ls
+  - cd magnolia
+  - mgnl start &
+  - until fgrep -q "Server startup" apache-tomcat/logs/catalina.out; do sleep 1; done
+
+  - cd ..
+  - cd mgnl-custom

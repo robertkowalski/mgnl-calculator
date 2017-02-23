@@ -1,0 +1,39 @@
+# Automatically generated dialog with few most often used fileds (text, right, link, DAM image, multivalue, link to app, select). Feel free to modify them for your specific component.
+
+form:
+  label: calculator
+  tabs:
+    - name: tabMain
+      label: Main
+      fields:
+
+        - name: uid
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          label: UID
+          defaultValue: mgnlCalc1
+
+        - name: title
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          label: Title
+          defaultValue: Interest Calculator
+
+        - name: value1
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          label: Value 1
+          defaultValue: Interest Rate
+
+        - name: value2
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          label: Value 2
+          defaultValue: Amount of Money
+
+        - name: formula
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          label: Formula
+          defaultValue: "([A] * [B]) / 100"
+
+actions:
+  commit:
+    class: info.magnolia.ui.admincentral.dialog.action.SaveDialogActionDefinition
+  cancel:
+    class: info.magnolia.ui.admincentral.dialog.action.CancelDialogActionDefinition
