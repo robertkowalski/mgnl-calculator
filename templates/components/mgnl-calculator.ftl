@@ -1,4 +1,6 @@
-<div id="${content.uid!}" class="mgnl-calculator">
+[#assign uid = content.uid ! "mgnl-calculator-" + content.@id]
+
+<div id="${uid}" class="mgnl-calculator">
   <h2>${content.title!}</h2>
 
   <label>
@@ -20,8 +22,8 @@
 <script>
 (function (window, $) {
   $(document).ready(function () {
-    var id = '#${content.uid!}'
-    var ${content.uid!} = new window.MgnlCalculator(id)
+    var id = '#${uid!}'
+    new window.MgnlCalculator(id)
   })
 })(window, jQuery)
 </script>

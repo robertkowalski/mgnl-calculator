@@ -31,6 +31,7 @@ form:
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition
           label: Formula
           defaultValue: "([A] * [B]) / 100"
+          required: true
 
 actions:
   commit:
