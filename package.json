@@ -2,7 +2,7 @@
   "name": "mgnl-calculator",
   "version": "0.0.1",
   "description": "Calculator component",
-  "main": "index.js",
+  "main": "webresources/bundle.js",
   "scripts": {
     "test": "npm run unit && npm run integration",
     "unit": "jest",

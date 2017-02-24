@@ -21,7 +21,7 @@ After installation, add this to your page template:
 
 ```
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src=".resources/mgnl-calculator/webresources/js/bundle.js"></script>
+<script src=".resources/mgnl-calculator/webresources/bundle.js"></script>
 
 ```
 
