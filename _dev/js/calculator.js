@@ -17,8 +17,8 @@ class MgnlCalculator {
   }
 
   parseFormula (formula, a, b) {
-    if (!a || Number.isNaN(+a)) return null
-    if (!b || Number.isNaN(+b)) return null
+    if (a === '' || Number.isNaN(+a)) return null
+    if (b === '' || Number.isNaN(+b)) return null
 
     return formula
       .replace('[A]', a)
