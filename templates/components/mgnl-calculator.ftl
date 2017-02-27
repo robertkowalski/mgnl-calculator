@@ -13,10 +13,13 @@
     <input class="mgnl-calculator__value2"/>
   </label>
 
-  <input
-    data-formula="${content.formula!}"
-    disabled="true"
-    class="mgnl-calculator__result" />
+  <label>
+    Result
+    <input
+      data-formula="${content.formula!}"
+      disabled="true"
+      class="mgnl-calculator__result" />
+  </label>
 </div>
 
 <script>
